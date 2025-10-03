@@ -1,0 +1,31 @@
+project_id = "tfohpwclpbfxftgfolwz"
+
+[functions.ai-chat]
+verify_jwt = false
+
+[functions.speech-to-text] 
+verify_jwt = false
+
+[functions.text-to-speech]
+verify_jwt = false
+[functions.risk-forecast]
+enabled = true
+verify_jwt = true
+import_map = "./functions/risk-forecast/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/risk-forecast/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/risk-forecast/*.html" ]
+
+[functions.health-map]
+enabled = true
+verify_jwt = true
+import_map = "./functions/health-map/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/health-map/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/health-map/*.html" ]

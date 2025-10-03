@@ -1,0 +1,201 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #8FBC8F 0%, #228B22 50%, #6B8E23 100%);
+  min-height: 100vh;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Farm field background pattern */
+#root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.logo {
+  height: 8em;
+  padding: 2em;
+  will-change: filter, transform;
+  transition: all 400ms ease;
+  border-radius: 50%;
+  background: radial-gradient(circle, #DEB887 0%, #D2691E 70%, #8B4513 100%);
+  box-shadow: 
+    0 8px 16px rgba(139, 69, 19, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  border: 4px solid #8B4513;
+  position: relative;
+  z-index: 1;
+}
+
+.logo:hover {
+  filter: 
+    drop-shadow(0 0 3em #DEB887aa) 
+    drop-shadow(0 0 1.5em #D2691Eaa)
+    brightness(1.1);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 
+    0 12px 24px rgba(139, 69, 19, 0.4),
+    inset 0 3px 6px rgba(255, 255, 255, 0.3);
+}
+
+.logo.react:hover {
+  filter: 
+    drop-shadow(0 0 3em #32CD32aa) 
+    drop-shadow(0 0 1.5em #228B22aa)
+    brightness(1.1);
+  background: radial-gradient(circle, #90EE90 0%, #32CD32 70%, #228B22 100%);
+}
+
+/* Farm windmill rotation animation */
+@keyframes windmill-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gentle swaying like wheat in the wind */
+@keyframes wheat-sway {
+  0%, 100% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  25% {
+    transform: rotate(1deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-1deg) translateX(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: windmill-spin infinite 15s linear;
+  }
+  
+  /* Add gentle swaying to all logos */
+  .logo:not(:hover) {
+    animation: wheat-sway 4s ease-in-out infinite;
+  }
+}
+
+.card {
+  padding: 2.5em;
+  background: linear-gradient(145deg, #F5DEB3 0%, #DEB887 100%);
+  border: 3px solid #8B4513;
+  border-radius: 15px;
+  box-shadow: 
+    0 8px 20px rgba(139, 69, 19, 0.25),
+    inset 0 1px 3px rgba(255, 255, 255, 0.3);
+  margin: 2rem 0;
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+/* Wood grain texture for cards */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(139, 69, 19, 0.05) 0px,
+      rgba(139, 69, 19, 0.05) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 28px rgba(139, 69, 19, 0.35),
+    inset 0 2px 6px rgba(255, 255, 255, 0.4);
+  transition: all 300ms ease;
+}
+
+.read-the-docs {
+  color: #654321;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  position: relative;
+}
+
+.read-the-docs::before {
+  content: '🌾 ';
+  margin-right: 0.5em;
+}
+
+.read-the-docs::after {
+  content: ' 🌾';
+  margin-left: 0.5em;
+}
+
+/* Add some farm-themed decorative elements */
+body {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Floating farm elements animation */
+@keyframes float-seeds {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+}
+
+/* Add decorative farm borders */
+#root {
+  border: 8px solid;
+  border-image: 
+    repeating-linear-gradient(
+      45deg,
+      #8B4513 0px,
+      #8B4513 10px,
+      #DEB887 10px,
+      #DEB887 20px
+    ) 8;
+}
+
+/* Responsive adjustments for farm theme */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+    border-width: 4px;
+  }
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+  }
+  
+  .card {
+    padding: 1.5em;
+    margin: 1rem 0;
+  }
+}
