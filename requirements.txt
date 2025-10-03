@@ -1,0 +1,15 @@
+# JavaScript/TypeScript project requirements
+# Install using: npm install <package_name>
+
+react
+react-dom
+vite
+typescript
+tailwindcss
+postcss
+autoprefixer
+@radix-ui/react-icons
+class-variance-authority
+tailwind-variants
+lucide-react
+shadcn-ui
